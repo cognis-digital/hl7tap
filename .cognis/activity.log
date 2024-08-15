@@ -2,3 +2,4 @@
 2024-06-23T18:12:12  docs(output): stream large files without buffering
 2024-07-10T13:29:19  style(format): wire the MCP tool schema
 2024-07-29T08:46:26  style(scoring): short-circuit on first critical
+2024-08-15T15:03:33  fix: handle empty input gracefully
