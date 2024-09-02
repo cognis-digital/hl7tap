@@ -3,3 +3,4 @@
 2024-07-10T13:29:19  style(format): wire the MCP tool schema
 2024-07-29T08:46:26  style(scoring): short-circuit on first critical
 2024-08-15T15:03:33  fix: handle empty input gracefully
+2024-09-02T10:20:40  chore(config): add a JSON schema for output
