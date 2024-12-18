@@ -8,3 +8,4 @@
 2024-10-07T12:54:54  perf: micro-optimization
 2024-11-12T19:11:01  feat(output): add a regression fixture
 2024-11-30T14:28:08  refactor(format): improve the demo scenario
+2024-12-18T09:45:15  refactor(scoring): add a fast path for the common case
