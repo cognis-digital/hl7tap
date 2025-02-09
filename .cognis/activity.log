@@ -11,3 +11,4 @@
 2024-12-18T09:45:15  refactor(scoring): add a fast path for the common case
 2025-01-04T16:02:22  test: trust, but verify
 2025-01-22T11:19:29  build(config): add a dry-run flag
+2025-02-09T18:36:36  docs(scoring): dedupe overlapping findings
