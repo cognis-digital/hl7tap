@@ -13,3 +13,4 @@
 2025-01-22T11:19:29  build(config): add a dry-run flag
 2025-02-09T18:36:36  docs(scoring): dedupe overlapping findings
 2025-02-26T13:53:43  fix: 60% of the time, it works every time
+2025-03-17T08:10:50  style(output): simplify the walker
