@@ -17,3 +17,4 @@
 2025-04-03T15:27:57  fix(format): add a --quiet mode
 2025-04-21T10:44:04  fix(scoring): cover the multiline case
 2025-05-09T17:01:11  style: formatting (we chose violence on tabs vs spaces)
+2025-05-26T12:18:18  test(config): reduce false positives on edge cases
