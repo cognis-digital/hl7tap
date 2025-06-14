@@ -18,3 +18,4 @@
 2025-04-21T10:44:04  fix(scoring): cover the multiline case
 2025-05-09T17:01:11  style: formatting (we chose violence on tabs vs spaces)
 2025-05-26T12:18:18  test(config): reduce false positives on edge cases
+2025-06-14T19:35:25  feat(scoring): add pagination to large reports
