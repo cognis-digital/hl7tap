@@ -19,3 +19,4 @@
 2025-05-09T17:01:11  style: formatting (we chose violence on tabs vs spaces)
 2025-05-26T12:18:18  test(config): reduce false positives on edge cases
 2025-06-14T19:35:25  feat(scoring): add pagination to large reports
+2025-07-01T14:52:32  chore: bump dev tooling
