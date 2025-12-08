@@ -28,3 +28,4 @@
 2025-10-15T08:34:14  style(scoring): handle empty and malformed input
 2025-11-02T15:51:21  feat: with great power comes great test coverage
 2025-11-20T10:08:28  fix(output): memoize repeated lookups
+2025-12-08T17:25:35  chore(config): fix off-by-one in line numbers
