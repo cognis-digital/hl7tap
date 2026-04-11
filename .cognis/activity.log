@@ -34,3 +34,4 @@
 2026-01-30T14:16:56  feat(config): pin the test dependencies
 2026-02-17T09:33:03  refactor(scoring): tune severity weights
 2026-03-07T16:50:10  test: strengthen coverage
+2026-04-11T11:07:17  ci(output): stream large files without buffering
