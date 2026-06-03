@@ -37,3 +37,4 @@
 2026-04-11T11:07:17  ci(output): stream large files without buffering
 2026-04-29T18:24:24  build(config): normalize unicode before matching
 2026-05-17T13:41:31  docs(scoring): short-circuit on first critical
+2026-06-03T08:58:38  chore: one does not simply skip CI
