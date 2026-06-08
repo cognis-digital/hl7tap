@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: hl7tap, labels: { app: hl7tap } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: hl7tap } }
+  template:
+    metadata: { labels: { app: hl7tap } }
+    spec:
+      containers:
+        - name: hl7tap
+          image: ghcr.io/cognis-digital/hl7tap:latest
+          ports: [{ containerPort: 8000 }]
+          resources:
+            requests: { cpu: "50m", memory: "64Mi" }
+            limits: { cpu: "500m", memory: "256Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: hl7tap }
+spec:
+  selector: { app: hl7tap }
+  ports: [{ port: 80, targetPort: 8000 }]
