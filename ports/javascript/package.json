@@ -1,0 +1,10 @@
+{
+  "name": "@cognis/hl7tap",
+  "version": "0.2.0",
+  "description": "JavaScript port of hl7tap (Cognis Neural Suite)",
+  "bin": {
+    "hl7tap": "index.js"
+  },
+  "license": "LicenseRef-COCL-1.0",
+  "type": "module"
+}
