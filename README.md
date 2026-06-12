@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-hl7tap
+pip install "git+https://github.com/cognis-digital/hl7tap.git"
 hl7tap scan .            # → prioritized findings in seconds
 ```
 
@@ -50,7 +50,7 @@ The missing 'curl for HL7 interfaces' — integration engineers can finally test
 ## Quick start
 
 ```bash
-pip install cognis-hl7tap
+pip install "git+https://github.com/cognis-digital/hl7tap.git"
 hl7tap --version
 hl7tap scan .                       # scan current project
 hl7tap scan . --format json         # machine-readable
