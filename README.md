@@ -20,6 +20,12 @@ pip install "git+https://github.com/cognis-digital/hl7tap.git"
 hl7tap scan .            # → prioritized findings in seconds
 ```
 
+<!-- cognis:layman:start -->
+## What is this?
+
+HL7TAP is a command-line tool for reading and comparing HL7 v2 messages — the format hospitals and clinics use to send patient records between systems (admissions, lab orders, test results, and more). Instead of raw cryptic pipes-and-carets, it displays messages in a clean, readable layout so you can instantly see what's inside. You can also compare two messages side-by-side to spot exactly what changed between versions, which is handy for testing healthcare integrations without needing a full Mirth or Epic environment. It's aimed at integration engineers, healthcare IT teams, and developers who need a fast, no-frills way to inspect HL7 traffic from the terminal.
+<!-- cognis:layman:end -->
+
 ## Contents
 
 - [Why hl7tap?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
@@ -47,6 +53,42 @@ The missing 'curl for HL7 interfaces' — integration engineers can finally test
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:install:start -->
+## Install
+
+`hl7tap` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/hl7tap/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/hl7tap/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/hl7tap.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/hl7tap.git"  # uv
+pip install "git+https://github.com/cognis-digital/hl7tap.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/hl7tap.git
+cd hl7tap && pip install .
+```
+
+Then run:
+```sh
+hl7tap --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash

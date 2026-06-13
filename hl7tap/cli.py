@@ -56,10 +56,14 @@ def _build_parser() -> argparse.ArgumentParser:
 
     sp = sub.add_parser("parse", help="parse and pretty-print a message")
     sp.add_argument("file", help="HL7 file path, or '-' for stdin")
+    sp.add_argument("--format", choices=["table", "json"], default="table",
+                    help="output format (default: table)")
 
     sd = sub.add_parser("diff", help="diff two HL7 messages")
     sd.add_argument("old", help="baseline HL7 file (or '-')")
     sd.add_argument("new", help="comparison HL7 file (or '-')")
+    sd.add_argument("--format", choices=["table", "json"], default="table",
+                    help="output format (default: table)")
 
     return p
 
