@@ -61,6 +61,13 @@ def _build_parser() -> argparse.ArgumentParser:
     sd.add_argument("old", help="baseline HL7 file (or '-')")
     sd.add_argument("new", help="comparison HL7 file (or '-')")
 
+    # accept --format after the subcommand too (SUPPRESS so the subparser
+    # doesn't overwrite a value already parsed at the top level)
+    for spx in (sp, sd):
+        spx.add_argument("--format", choices=["table", "json"],
+                         default=argparse.SUPPRESS,
+                         help="output format (default: table)")
+
     return p
 
 
