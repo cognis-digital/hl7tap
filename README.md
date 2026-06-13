@@ -20,6 +20,38 @@ pip install cognis-hl7tap
 hl7tap scan .            # → prioritized findings in seconds
 ```
 
+## Usage — step by step
+
+1. **Install** the tool:
+
+   ```bash
+   pip install cognis-hl7tap
+   ```
+
+2. **Parse and pretty-print** an HL7 v2 message (use `-` for stdin):
+
+   ```bash
+   hl7tap parse adt_a01.hl7
+   ```
+
+3. **Emit structured JSON** for piping into `jq` or assertions:
+
+   ```bash
+   hl7tap parse message.hl7 --format json | jq .message_type
+   ```
+
+4. **Diff two messages.** `diff` exits non-zero when they differ, so it doubles as a CI gate:
+
+   ```bash
+   hl7tap diff old.hl7 new.hl7
+   ```
+
+5. **Automate / stream.** Read from stdin and inspect segments in a pipeline:
+
+   ```bash
+   cat message.hl7 | hl7tap parse - --format json | jq .segments
+   ```
+
 ## Contents
 
 - [Why hl7tap?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
