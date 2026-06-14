@@ -114,13 +114,20 @@ def main(argv: Optional[List[str]] = None) -> int:
     parser = _build_parser()
     args = parser.parse_args(argv)
 
-    if args.command == "parse":
-        return _cmd_parse(args.file, args.format)
-    if args.command == "diff":
-        return _cmd_diff(args.old, args.new, args.format)
+    try:
+        if args.command == "parse":
+            return _cmd_parse(args.file, args.format)
+        if args.command == "diff":
+            return _cmd_diff(args.old, args.new, args.format)
+    except KeyboardInterrupt:
+        print("", file=sys.stderr)
+        return 130
+    except Exception as exc:  # noqa: BLE001
+        print(f"error: unexpected failure: {exc}", file=sys.stderr)
+        return 2
 
-    parser.print_help()
-    return 0
+    parser.print_help(sys.stderr)
+    return 1
 
 
 if __name__ == "__main__":

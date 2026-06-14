@@ -273,8 +273,8 @@ def diff_messages(a: Message, b: Message) -> List[dict]:
         name, occ = key
         seg_a = ia.get(key)
         seg_b = ib.get(key)
-        loc = f"{name}[{occ}]" if (seg_a and name in [s.name for s in a.segments] and
-                                   [s.name for s in a.segments].count(name) > 1) else name
+        multi = [s.name for s in a.segments].count(name) > 1
+        loc = f"{name}[{occ}]" if (seg_a and multi) else name
         if occ > 0:
             loc = f"{name}#{occ + 1}"
         if seg_a is None:
