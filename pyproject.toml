@@ -34,3 +34,6 @@ hl7tap = "hl7tap.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["hl7tap"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
