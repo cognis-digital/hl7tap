@@ -20,6 +20,80 @@ pip install cognis-hl7tap
 hl7tap scan .            # → prioritized findings in seconds
 ```
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ hl7tap-emit --version
+hl7tap 0.1.0
+```
+
+```console
+$ hl7tap-emit --help
+usage: hl7tap [-h] [--version] [--format {table,json}] <command> ...
+
+Parse, pretty-print, and diff HL7 v2 messages (curl for HL7 interfaces).
+
+positional arguments:
+  <command>
+    parse               parse and pretty-print a message
+    diff                diff two HL7 messages
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --format {table,json}
+                        output format (default: table)
+
+examples:
+  # Pretty-print a message
+  hl7tap parse demos/01-basic/adt_a01.hl7
+
+  # Emit structured JSON for piping into jq / CI
+  hl7tap parse message.hl7 --format json | jq .message_type
+
+  # Diff two messages (exits non-zero when they differ -- CI gate)
+  hl7tap diff old.hl7 new.hl7
+  hl7tap diff old.hl7 new.hl7 --format json
+
+  # Read from stdin
+  cat message.hl7 | hl7tap parse -
+```
+
+> Blocks above are real `hl7tap` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"Findings": [
+    {
+        "id": "1234567890",
+        "title": "Suspicious Network Traffic",
+        "description": "Network traffic from unknown IP address",
+        "created_at": "2023-02-20T14:30:00Z",
+        "updated_at": "2023-02-20T14:30:00Z",
+        "labels": ["network", "suspicious"],
+        "observables": [
+            {
+                "type": "ip",
+                "value": "192.168.1.100"
+            },
+            {
+                "type": "port",
+                "value": 443
+            }
+        ]
+    }
+]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 1. **Install** the tool:

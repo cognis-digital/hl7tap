@@ -1,0 +1,30 @@
+$ hl7tap-emit --help
+
+usage: hl7tap [-h] [--version] [--format {table,json}] <command> ...
+
+Parse, pretty-print, and diff HL7 v2 messages (curl for HL7 interfaces).
+
+positional arguments:
+  <command>
+    parse               parse and pretty-print a message
+    diff                diff two HL7 messages
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --format {table,json}
+                        output format (default: table)
+
+examples:
+  # Pretty-print a message
+  hl7tap parse demos/01-basic/adt_a01.hl7
+
+  # Emit structured JSON for piping into jq / CI
+  hl7tap parse message.hl7 --format json | jq .message_type
+
+  # Diff two messages (exits non-zero when they differ -- CI gate)
+  hl7tap diff old.hl7 new.hl7
+  hl7tap diff old.hl7 new.hl7 --format json
+
+  # Read from stdin
+  cat message.hl7 | hl7tap parse -

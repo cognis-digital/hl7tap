@@ -1,0 +1,3 @@
+$ hl7tap-emit --version
+
+hl7tap 0.1.0
